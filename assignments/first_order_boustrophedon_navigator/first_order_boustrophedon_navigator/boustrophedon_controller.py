@@ -10,6 +10,7 @@ from collections import deque
 from std_msgs.msg import Float64
 from rcl_interfaces.msg import SetParametersResult
 import matplotlib.pyplot as plt
+from navigator_interfaces.msg import PerformanceMetrics
 
 class BoustrophedonController(Node):
     def __init__(self):
@@ -19,10 +20,10 @@ class BoustrophedonController(Node):
         self.declare_parameters(
             namespace='',
             parameters=[
-                ('Kp_linear', 1.0),
-                ('Kd_linear', 0.1),
-                ('Kp_angular', 1.0),
-                ('Kd_angular', 0.1),
+                ('Kp_linear', 6.0),
+                ('Kd_linear', 0.3),
+                ('Kp_angular', 9.5),
+                ('Kd_angular', 0.15),
                 ('spacing', 0.5)
             ]
         )
@@ -51,6 +52,9 @@ class BoustrophedonController(Node):
         # Data for plots
         self.trajectory = []  # To store x, y positions
         self.velocities = []  # To store linear and angular velocities
+        self.distances_to_waypoint = [] # To store distance to next waypoint
+        self.completion_percentages = [] # To store completion percentage
+        self.heading_errors = [] # To store heading error
         
         # State variables
         self.pose = Pose()
@@ -68,6 +72,12 @@ class BoustrophedonController(Node):
             10
         )
         
+        self.metrics_pub = self.create_publisher(
+            PerformanceMetrics,
+            'performance_metrics',
+            10
+        )
+
         self.get_logger().info('Lawnmower controller started')
         self.get_logger().info(f'Following waypoints: {self.waypoints}')
 
@@ -163,8 +173,21 @@ class BoustrophedonController(Node):
         vel_msg.angular.z = angular_velocity
         self.velocity_publisher.publish(vel_msg)
 
+        # Publish performance metrics
+        metrics_msg = PerformanceMetrics()
+        metrics_msg.cross_track_error = cross_track_error
+        metrics_msg.current_velocity_linear = float(linear_velocity)
+        metrics_msg.current_velocity_angular = float(angular_velocity)
+        metrics_msg.distance_to_next_waypoint = distance
+        metrics_msg.completion_percentage = (float(self.current_waypoint) / len(self.waypoints)) * 100.0
+        metrics_msg.heading_error = float(angular_error)
+        self.metrics_pub.publish(metrics_msg)
+
         self.trajectory.append((self.pose.x, self.pose.y))
         self.velocities.append((linear_velocity, angular_velocity))
+        self.distances_to_waypoint.append(distance)
+        self.completion_percentages.append(metrics_msg.completion_percentage)
+        self.heading_errors.append(angular_error)
 
         self.prev_linear_error = distance
         self.prev_angular_error = angular_error
@@ -221,8 +244,34 @@ class BoustrophedonController(Node):
         plt.legend()
         plt.savefig("velocity_profiles.png")
 
+
+        # Plot Distance to Next Waypoint
+        plt.figure()
+        plt.plot(self.distances_to_waypoint)
+        plt.title("Distance to Next Waypoint Over Time")
+        plt.xlabel("Time Step")
+        plt.ylabel("Distance")
+        plt.savefig("distance_to_waypoint.png")
+
+        # Plot Completion Percentage
+        plt.figure()
+        plt.plot(self.completion_percentages)
+        plt.title("Mission Completion Percentage")
+        plt.xlabel("Time Step")
+        plt.ylabel("Percentage")
+        plt.savefig("completion_percentage.png")
+
+        # Plot Heading Error
+        plt.figure()
+        plt.plot(self.heading_errors)
+        plt.title("Heading Error Over Time")
+        plt.xlabel("Time Step")
+        plt.ylabel("Error (rad)")
+        plt.savefig("heading_error.png")
+
         self.get_logger().info("Plots saved as PNG files.")
 
+        
 def main(args=None):
     rclpy.init(args=args)
     controller = BoustrophedonController()
@@ -230,6 +279,7 @@ def main(args=None):
     try:
         rclpy.spin(controller)
     except KeyboardInterrupt:
+        controller.plot_data()
         pass
     finally:
         controller.destroy_node()

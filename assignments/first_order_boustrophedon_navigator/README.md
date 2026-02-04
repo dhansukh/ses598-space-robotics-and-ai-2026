@@ -1,3 +1,4 @@
+[![Watch the video](https://img.youtube.com/vi/_K7nWjBNucc/0.jpg)](https://youtu.be/_K7nWjBNucc)
 
 ## Extra Credit (10 points) (documentation)
 ## Custom Performance Metrics

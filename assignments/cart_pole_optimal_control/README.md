@@ -2,6 +2,10 @@
 
 ## 1. Introduction
 
+video link
+
+[Watch the Video Demonstration](https://youtu.be/u74jgKXKjsQ)
+
 This report documents the systematic tuning process of a Linear Quadratic Regulator (LQR) controller for a cart-pole system subject to earthquake disturbances. The objective is to maintain the pendulum in an upright position while keeping the cart within its ±2.5m physical limits, under continuous seismic-like perturbations (base amplitude of 15N, frequency range 0.5–4.0 Hz).
 
 ### System Parameters
@@ -147,6 +151,16 @@ R = np.array([[0.05]])
 - Control forces are higher but within reasonable bounds
 - Smooth, responsive behavior with quick recovery from disturbances
 
+#### Simulation Screenshots
+
+*Gazebo simulation with RViz visualization and controller logs:*
+
+![Gazebo Simulation Running](images/simulation_gazebo.png)
+
+*Final simulation results showing performance metrics (Q = [5, 5, 20, 20], R = 0.05):*
+
+![Simulation Results](images/simulation_results.png)
+
 ---
 
 ## 4. Final Tuned Parameters
@@ -174,6 +188,13 @@ R = np.array([[0.05]])                  # Control cost
 ---
 
 ## 5. Performance Analysis
+
+### Performance Plots
+The following plots show the system behavior over the full 120-second simulation with the final tuned parameters (Q = diag([5, 5, 20, 20]), R = 0.05):
+
+![Performance Plots](images/performance_plots.png)
+
+*Top-left: Cart position remains within ±0.13m. Top-right: Pole angle stays within ±3°. Bottom-left: Earthquake disturbance forces (±60N peaks). Bottom-right: Control force response tracks the disturbance pattern.*
 
 ### 5.1 Duration of Stable Operation
 - **Default parameters:** System fails within 5–10 seconds

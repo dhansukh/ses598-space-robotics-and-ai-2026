@@ -1,3 +1,4 @@
+import launch
 from launch import LaunchDescription
 from launch.actions import ExecuteProcess
 from launch.substitutions import Command, LaunchConfiguration
@@ -8,13 +9,24 @@ import os
 def generate_launch_description():
     pkg_share = FindPackageShare('cart_pole_optimal_control').find('cart_pole_optimal_control')
     urdf_model_path = os.path.join(pkg_share, 'models', 'cart_pole', 'model.urdf')
-    
+    # Define the models directory path for Gazebo
+    models_dir = os.path.join(pkg_share, 'models')
+
     # Create and return launch description
     return LaunchDescription([
-        # Gazebo (headless mode)
-        ExecuteProcess(
-            cmd=['gz', 'sim', '-r', '-s', 'empty.sdf'],  # -s for headless mode
-            output='screen'
+        # Set Gazebo resource path so it can find the models
+        launch.actions.SetEnvironmentVariable(
+            name='GZ_SIM_RESOURCE_PATH',
+            value=models_dir
+        ),
+
+        # Gazebo (with GUI)
+        launch.actions.IncludeLaunchDescription(
+            launch.launch_description_sources.PythonLaunchDescriptionSource(
+                os.path.join(FindPackageShare('ros_gz_sim').find('ros_gz_sim'),
+                             'launch', 'gz_sim.launch.py')
+            ),
+            launch_arguments={'gz_args': '-r empty.sdf'}.items()
         ),
 
         # Spawn robot in Gazebo

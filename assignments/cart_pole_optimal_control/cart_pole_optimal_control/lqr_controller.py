@@ -35,8 +35,8 @@ class CartPoleLQRController(Node):
         ])
         
         # LQR cost matrices
-        self.Q = np.diag([1.0, 1.0, 1.0, 1.0])  # State cost
-        self.R = np.array([[1.0]])  # Control cost
+        self.Q = np.diag([5.0, 5.0, 20.0, 20.0])  # State cost
+        self.R = np.array([[0.5]])  # Control cost
         
         # Compute LQR gain matrix
         self.K = self.compute_lqr_gain()
@@ -107,7 +107,7 @@ class CartPoleLQRController(Node):
         if self.state_initialized:
             self.earthquake_forces.append(msg.data)
         else:
-            self.get_logger().warn("Received earthquake force before state was initialized.")
+            self.get_logger().debug("Received earthquake force before state was initialized.")
 
     def print_metrics(self):
         """Prints performance metrics after simulation ends."""

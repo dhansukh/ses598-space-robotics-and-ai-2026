@@ -1,0 +1,38 @@
+[0.624s] Invoking command in '/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control': PYTHONPATH=/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/build --no-deps symlink_data
+[0.874s] running develop
+[1.049s] running egg_info
+[1.049s] creating cart_pole_optimal_control.egg-info
+[1.054s] writing cart_pole_optimal_control.egg-info/PKG-INFO
+[1.054s] writing dependency_links to cart_pole_optimal_control.egg-info/dependency_links.txt
+[1.054s] writing entry points to cart_pole_optimal_control.egg-info/entry_points.txt
+[1.054s] writing requirements to cart_pole_optimal_control.egg-info/requires.txt
+[1.054s] writing top-level names to cart_pole_optimal_control.egg-info/top_level.txt
+[1.054s] writing manifest file 'cart_pole_optimal_control.egg-info/SOURCES.txt'
+[1.054s] reading manifest file 'cart_pole_optimal_control.egg-info/SOURCES.txt'
+[1.054s] writing manifest file 'cart_pole_optimal_control.egg-info/SOURCES.txt'
+[1.055s] running build_ext
+[1.056s] Creating /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/python3.10/site-packages/cart-pole-optimal-control.egg-link (link to .)
+[1.057s] Installing dqn_controller script to /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/cart_pole_optimal_control
+[1.057s] Installing earthquake_force_generator script to /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/cart_pole_optimal_control
+[1.057s] Installing force_visualizer script to /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/cart_pole_optimal_control
+[1.057s] Installing lqr_controller script to /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/cart_pole_optimal_control
+[1.058s] Installing state_republisher script to /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/cart_pole_optimal_control
+[1.058s] 
+[1.058s] Installed /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control
+[1.058s] running symlink_data
+[1.060s] creating /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/ament_index
+[1.060s] creating /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/ament_index/resource_index
+[1.060s] creating /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/ament_index/resource_index/packages
+[1.060s] symbolically linking /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/resource/cart_pole_optimal_control -> /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/ament_index/resource_index/packages
+[1.060s] symbolically linking /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/package.xml -> /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control
+[1.060s] creating /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/launch
+[1.060s] symbolically linking /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/launch/cart_pole.launch.py -> /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/launch
+[1.060s] symbolically linking /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/launch/cart_pole_dqn.launch.py -> /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/launch
+[1.060s] symbolically linking /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/launch/cart_pole_rviz.launch.py -> /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/launch
+[1.060s] creating /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/config
+[1.060s] symbolically linking /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/config/cart_pole.rviz -> /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/config
+[1.060s] creating /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/models
+[1.060s] creating /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/models/cart_pole
+[1.061s] symbolically linking /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/models/cart_pole/model.urdf -> /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/models/cart_pole
+[1.061s] creating /home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/models/cart_pole/meshes
+[1.119s] Invoked command in '/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control' returned '0': PYTHONPATH=/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/build --no-deps symlink_data

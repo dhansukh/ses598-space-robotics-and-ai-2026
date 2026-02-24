@@ -248,3 +248,132 @@ The iterative tuning process revealed several key insights about LQR control for
 4. **Velocity terms provide critical damping**: Equal weighting of position and velocity terms for both cart and pole subsystems produces smooth, well-damped responses that avoid oscillatory behavior.
 
 5. **The final parameters Q = diag([5, 5, 20, 20]) and R = 0.05** achieve stable operation for the full simulation duration while respecting all physical constraints and maintaining reasonable control effort.
+
+---
+
+## 8. Extra Credit: DQN Reinforcement Learning Controller
+
+### 8.1 DQN Architecture & Approach
+
+A Deep Q-Network (DQN) controller was implemented as an alternative to the model-based LQR approach. Unlike LQR, which requires a known linear system model, DQN learns a control policy purely from interaction with the environment.
+
+**Network Architecture:**
+```
+Input (5) → Dense(128, ReLU) → Dense(128, ReLU) → Dense(64, ReLU) → Output (2)
+```
+
+- **State space**: 5 dimensions — [cart_position, cart_velocity, pole_angle, pole_angular_velocity, earthquake_force]
+- **Action space**: 2 discrete actions — push left or push right
+- **Key features**: Experience replay (100K buffer), target network (updated every 10 episodes), epsilon-greedy exploration (ε: 1.0 → 0.05), gradient clipping, SmoothL1 (Huber) loss
+
+### 8.2 Training Process
+
+The DQN agent was trained on OpenAI Gymnasium's CartPole-v1 environment with simulated earthquake disturbances injected into the state:
+
+- **Episodes**: 15,000
+- **Earthquake simulation**: Superposition of 5 sinusoidal waves (0.5–4.0 Hz, 15N base amplitude) with random noise — matching the ROS2 earthquake generator parameters
+- **Custom reward function**: Combines survival reward, pole angle penalty, cart displacement penalty, and disturbance bonus
+
+```python
+reward = base_reward + pole_stability + cart_stability + disturbance_bonus
+# base_reward = 1.0 (survival)
+# pole_stability = 1.0 - 2.5 * |pole_angle|
+# cart_stability = 1.0 - 0.5 * |cart_position|
+# disturbance_bonus = 0.1 * (|earthquake_force| / base_amplitude)
+```
+
+**Training Progress:**
+
+![DQN Training Progress](images/dqn_training_progress.png)
+
+*Top-left: Episode reward converges over 15,000 episodes. Top-right: Steps per episode (survival time) increases. Bottom-left: Epsilon decays from 1.0 to 0.05. Bottom-right: Training loss stabilizes.*
+
+### 8.3 ROS2 Integration
+
+The trained DQN model is deployed as a ROS2 node (`dqn_controller.py`) that interfaces with the Gazebo simulation using the same topics as the LQR controller:
+
+```bash
+# Launch DQN controller in Gazebo
+ros2 launch cart_pole_optimal_control cart_pole_dqn.launch.py
+```
+
+The DQN controller subscribes to `/world/empty/model/cart_pole/joint_state` and `/earthquake_force`, maps the learned discrete actions to continuous force commands, and publishes to `/model/cart_pole/joint/cart_to_base/cmd_force`.
+
+### 8.4 Performance Comparison: LQR vs DQN
+
+![LQR vs DQN Comparison](images/dqn_vs_lqr_comparison.png)
+
+| Metric | LQR (Tuned) | DQN |
+|---|---|---|
+| Control type | Continuous (model-based) | Discrete (learned policy) |
+| State information | Full model knowledge | Learned from experience |
+| Stability duration | Full 120s | Varies by training |
+| Cart position control | Tight (continuous force) | Coarser (binary force) |
+| Pole angle precision | High (optimal feedback) | Moderate |
+| Adaptability | Fixed model | Can generalize to new disturbances |
+
+**Key Findings:**
+
+1. **LQR excels at precision**: With full knowledge of the system dynamics, the LQR controller produces smooth, optimal control trajectories that minimize both state deviation and control effort simultaneously.
+
+2. **DQN demonstrates learning capability**: Despite using only discrete actions (push left/right), the DQN learns to stabilize the pendulum under earthquake disturbances — a non-trivial achievement for a model-free approach.
+
+3. **Trade-off — Optimality vs Adaptability**: LQR is provably optimal for the linear system model but degrades when the actual system deviates from the model. DQN, being model-free, can potentially adapt to nonlinear dynamics and unknown disturbance patterns.
+
+4. **Discrete vs Continuous**: The DQN's primary limitation is its discrete action space. A continuous-action RL method (e.g., DDPG, SAC) would provide a more fair comparison with LQR's continuous force output.
+
+### 8.5 Files & Usage
+
+| File | Description |
+|---|---|
+| `dqn/dqn_agent.py` | DQN agent with Q-network, replay buffer, and training logic |
+| `dqn/dqn_train.py` | Training script (15K episodes with earthquake simulation) |
+| `dqn/dqn_evaluate.py` | Evaluation script with metrics and plots |
+| `dqn/dqn_controller.py` | ROS2 controller node for Gazebo deployment |
+| `dqn/compare_controllers.py` | LQR vs DQN comparison script |
+| `launch/cart_pole_dqn.launch.py` | Launch file for DQN controller in Gazebo |
+
+```bash
+# Train the DQN agent
+cd cart_pole_optimal_control/cart_pole_optimal_control/dqn
+python3 dqn_train.py
+
+# Evaluate the trained agent
+python3 dqn_evaluate.py
+
+# Run LQR vs DQN comparison
+python3 compare_controllers.py
+
+# Launch DQN in Gazebo
+ros2 launch cart_pole_optimal_control cart_pole_dqn.launch.py
+```
+
+---
+
+## Evaluation Criteria
+
+### Core Assignment (100 points)
+
+**Analysis Quality (40 points)**
+- Depth of parameter analysis
+- Quality of performance metrics
+- Understanding of system behavior
+
+**Performance Results (30 points)**
+- Stability under disturbances
+- Constraint satisfaction
+- Control efficiency
+
+**Documentation (30 points)**
+- Clear analysis presentation
+- Quality of data and plots
+- Thoroughness of discussion
+
+### Extra Credit (up to 30 points)
+
+**Reinforcement Learning Implementation**
+- DQN controller implementation and training
+- Performance comparison with LQR controller
+- Training progress visualizations
+- Analysis of RL vs model-based control trade-offs
+

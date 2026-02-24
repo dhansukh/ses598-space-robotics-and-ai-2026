@@ -1,0 +1,181 @@
+[0.116s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'cart_pole_optimal_control', '--symlink-install']
+[0.116s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['cart_pole_optimal_control'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7902607a4bb0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x790260726110>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x790260726110>>, mixin_verb=('build',))
+[0.306s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.306s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.306s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.306s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.306s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.306s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.306s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/dhansukh/ses598-space-robotics-and-ai-2026'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.306s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extensions ['ignore', 'ignore_ament_install']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extension 'ignore'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extension 'ignore_ament_install'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extensions ['colcon_pkg']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extension 'colcon_pkg'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extensions ['colcon_meta']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extension 'colcon_meta'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extensions ['ros']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extension 'ros'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extensions ['cmake', 'python']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extension 'cmake'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extension 'python'
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extensions ['python_setup_py']
+[0.321s] Level 1:colcon.colcon_core.package_identification:_identify(assignments) by extension 'python_setup_py'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/cart_pole_optimal_control) by extensions ['ignore', 'ignore_ament_install']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/cart_pole_optimal_control) by extension 'ignore'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/cart_pole_optimal_control) by extension 'ignore_ament_install'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/cart_pole_optimal_control) by extensions ['colcon_pkg']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/cart_pole_optimal_control) by extension 'colcon_pkg'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/cart_pole_optimal_control) by extensions ['colcon_meta']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/cart_pole_optimal_control) by extension 'colcon_meta'
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/cart_pole_optimal_control) by extensions ['ros']
+[0.322s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/cart_pole_optimal_control) by extension 'ros'
+[0.325s] DEBUG:colcon.colcon_core.package_identification:Package 'assignments/cart_pole_optimal_control' with type 'ros.ament_python' and name 'cart_pole_optimal_control'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/first_order_boustrophedon_navigator) by extensions ['ignore', 'ignore_ament_install']
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/first_order_boustrophedon_navigator) by extension 'ignore'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/first_order_boustrophedon_navigator) by extension 'ignore_ament_install'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/first_order_boustrophedon_navigator) by extensions ['colcon_pkg']
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/first_order_boustrophedon_navigator) by extension 'colcon_pkg'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/first_order_boustrophedon_navigator) by extensions ['colcon_meta']
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/first_order_boustrophedon_navigator) by extension 'colcon_meta'
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/first_order_boustrophedon_navigator) by extensions ['ros']
+[0.325s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/first_order_boustrophedon_navigator) by extension 'ros'
+[0.326s] DEBUG:colcon.colcon_core.package_identification:Package 'assignments/first_order_boustrophedon_navigator' with type 'ros.ament_python' and name 'first_order_boustrophedon_navigator'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extensions ['ignore', 'ignore_ament_install']
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extension 'ignore'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extension 'ignore_ament_install'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extensions ['colcon_pkg']
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extension 'colcon_pkg'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extensions ['colcon_meta']
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extension 'colcon_meta'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extensions ['ros']
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extension 'ros'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extensions ['cmake', 'python']
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extension 'cmake'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extension 'python'
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extensions ['python_setup_py']
+[0.326s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/least_squares_and_probability_theory) by extension 'python_setup_py'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/terrain_mapping_drone_control) by extensions ['ignore', 'ignore_ament_install']
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/terrain_mapping_drone_control) by extension 'ignore'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/terrain_mapping_drone_control) by extension 'ignore_ament_install'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/terrain_mapping_drone_control) by extensions ['colcon_pkg']
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/terrain_mapping_drone_control) by extension 'colcon_pkg'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/terrain_mapping_drone_control) by extensions ['colcon_meta']
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/terrain_mapping_drone_control) by extension 'colcon_meta'
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/terrain_mapping_drone_control) by extensions ['ros']
+[0.327s] Level 1:colcon.colcon_core.package_identification:_identify(assignments/terrain_mapping_drone_control) by extension 'ros'
+[0.328s] DEBUG:colcon.colcon_core.package_identification:Package 'assignments/terrain_mapping_drone_control' with type 'ros.ament_python' and name 'terrain_mapping_drone_control'
+[0.328s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.328s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.328s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extensions ['ignore', 'ignore_ament_install']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extension 'ignore'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extension 'ignore_ament_install'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extensions ['colcon_pkg']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extension 'colcon_pkg'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extensions ['colcon_meta']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extension 'colcon_meta'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extensions ['ros']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extension 'ros'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extensions ['cmake', 'python']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extension 'cmake'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extension 'python'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extensions ['python_setup_py']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(lectures) by extension 'python_setup_py'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.329s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.329s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.329s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.329s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.329s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.329s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.347s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'first_order_boustrophedon_navigator' in 'assignments/first_order_boustrophedon_navigator'
+[0.347s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'terrain_mapping_drone_control' in 'assignments/terrain_mapping_drone_control'
+[0.347s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.347s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.350s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 6 installed packages in /home/dhansukh/ros2_ws/install
+[0.351s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 340 installed packages in /opt/ros/humble
+[0.352s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.391s] Level 5:colcon.colcon_core.verb:set package 'cart_pole_optimal_control' build argument 'cmake_args' from command line to 'None'
+[0.391s] Level 5:colcon.colcon_core.verb:set package 'cart_pole_optimal_control' build argument 'cmake_target' from command line to 'None'
+[0.391s] Level 5:colcon.colcon_core.verb:set package 'cart_pole_optimal_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.391s] Level 5:colcon.colcon_core.verb:set package 'cart_pole_optimal_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.391s] Level 5:colcon.colcon_core.verb:set package 'cart_pole_optimal_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.391s] Level 5:colcon.colcon_core.verb:set package 'cart_pole_optimal_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.391s] Level 5:colcon.colcon_core.verb:set package 'cart_pole_optimal_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.391s] Level 5:colcon.colcon_core.verb:set package 'cart_pole_optimal_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.391s] Level 5:colcon.colcon_core.verb:set package 'cart_pole_optimal_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.391s] DEBUG:colcon.colcon_core.verb:Building package 'cart_pole_optimal_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control', 'merge_install': False, 'path': '/home/dhansukh/ses598-space-robotics-and-ai-2026/assignments/cart_pole_optimal_control', 'symlink_install': True, 'test_result_base': None}
+[0.391s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.392s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.392s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/dhansukh/ses598-space-robotics-and-ai-2026/assignments/cart_pole_optimal_control' with build type 'ament_python'
+[0.392s] Level 1:colcon.colcon_core.shell:create_environment_hook('cart_pole_optimal_control', 'ament_prefix_path')
+[0.395s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.395s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/hook/ament_prefix_path.ps1'
+[0.396s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/hook/ament_prefix_path.dsv'
+[0.397s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/hook/ament_prefix_path.sh'
+[0.397s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.397s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.660s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/dhansukh/ses598-space-robotics-and-ai-2026/assignments/cart_pole_optimal_control'
+[0.661s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.661s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.017s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control': PYTHONPATH=/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/build --no-deps symlink_data
+[1.511s] Level 1:colcon.colcon_core.shell:create_environment_hook('cart_pole_optimal_control', 'pythonpath_develop')
+[1.511s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control' returned '0': PYTHONPATH=/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/build --no-deps symlink_data
+[1.512s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/share/cart_pole_optimal_control/hook/pythonpath_develop.ps1'
+[1.513s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/share/cart_pole_optimal_control/hook/pythonpath_develop.dsv'
+[1.514s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhansukh/ses598-space-robotics-and-ai-2026/build/cart_pole_optimal_control/share/cart_pole_optimal_control/hook/pythonpath_develop.sh'
+[1.521s] Level 1:colcon.colcon_core.environment:checking '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control' for CMake module files
+[1.521s] Level 1:colcon.colcon_core.environment:checking '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control' for CMake config files
+[1.522s] Level 1:colcon.colcon_core.environment:checking '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib'
+[1.523s] Level 1:colcon.colcon_core.environment:checking '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/bin'
+[1.523s] Level 1:colcon.colcon_core.environment:checking '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/pkgconfig/cart_pole_optimal_control.pc'
+[1.523s] Level 1:colcon.colcon_core.environment:checking '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/lib/python3.10/site-packages'
+[1.523s] Level 1:colcon.colcon_core.shell:create_environment_hook('cart_pole_optimal_control', 'pythonpath')
+[1.524s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/hook/pythonpath.ps1'
+[1.524s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/hook/pythonpath.dsv'
+[1.525s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/hook/pythonpath.sh'
+[1.525s] Level 1:colcon.colcon_core.environment:checking '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/bin'
+[1.525s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cart_pole_optimal_control)
+[1.526s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/package.ps1'
+[1.527s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/package.dsv'
+[1.528s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/package.sh'
+[1.530s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/package.bash'
+[1.531s] INFO:colcon.colcon_core.shell:Creating package script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/cart_pole_optimal_control/package.zsh'
+[1.532s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dhansukh/ses598-space-robotics-and-ai-2026/install/cart_pole_optimal_control/share/colcon-core/packages/cart_pole_optimal_control)
+[1.533s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.533s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.533s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.533s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.542s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.542s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.542s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.555s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.556s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/local_setup.ps1'
+[1.557s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/_local_setup_util_ps1.py'
+[1.560s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/setup.ps1'
+[1.561s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/local_setup.sh'
+[1.562s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/_local_setup_util_sh.py'
+[1.563s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/setup.sh'
+[1.565s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/local_setup.bash'
+[1.566s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/setup.bash'
+[1.568s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/local_setup.zsh'
+[1.569s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dhansukh/ses598-space-robotics-and-ai-2026/install/setup.zsh'

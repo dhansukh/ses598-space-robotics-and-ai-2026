@@ -7,7 +7,7 @@ package_name = 'cart_pole_optimal_control'
 setup(
     name=package_name,
     version='0.0.1',
-    packages=[package_name],
+    packages=[package_name, package_name + '.dqn'],
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -31,6 +31,7 @@ setup(
             'earthquake_force_generator = cart_pole_optimal_control.earthquake_force_generator:main',
             'force_visualizer = cart_pole_optimal_control.force_visualizer:main',
             'state_republisher = cart_pole_optimal_control.state_republisher:main',
+            'dqn_controller = cart_pole_optimal_control.dqn.dqn_controller:main',
         ],
     },
 )

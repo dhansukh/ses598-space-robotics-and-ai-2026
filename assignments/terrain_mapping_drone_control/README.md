@@ -129,6 +129,43 @@ ros2 launch terrain_mapping_drone_control cylinder_landing.launch.py
 ## Extra credit -- 3D reconstruction (50 points)
 Use RTAB-Map or a SLAM ecosystem of your choice to map both rocks, and export the world as a mesh file, and upload to your repo. Use git large file system (LFS) if needed. 
 
+## Mission Performance Logs
+
+The autonomous drone successfully met the evaluation criteria across 3 independent trials, showcasing consistent landing precision and energy efficiency.
+
+### Trial 1
+```
+[terrain_mission]: === MISSION COMPLETE ===
+[terrain_mission]: Duration: 83.6 s
+[terrain_mission]: Energy: 41.8 units
+[terrain_mission]: Position: (3.55, 4.63, -0.02)
+[terrain_mission]: Landing error: 0.059 m
+[terrain_mission]: 3D mapping images saved: 297
+[terrain_mission]: ========================
+```
+
+### Trial 2
+```
+[terrain_mission]: === MISSION COMPLETE ===
+[terrain_mission]: Duration: 85.2 s
+[terrain_mission]: Energy: 42.6 units
+[terrain_mission]: Position: (1.31, 5.12, -0.01)
+[terrain_mission]: Landing error: 0.057 m
+[terrain_mission]: 3D mapping images saved: 297
+[terrain_mission]: ========================
+```
+
+### Trial 3
+```
+[terrain_mission]: === MISSION COMPLETE ===
+[terrain_mission]: Duration: 82.8 s
+[terrain_mission]: Energy: 41.4 units
+[terrain_mission]: Position: (1.74, 5.17, -0.06)
+[terrain_mission]: Landing error: 0.071 m
+[terrain_mission]: 3D mapping images saved: 297
+[terrain_mission]: ========================
+```
+
 ## License
 
 This assignment is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0). 

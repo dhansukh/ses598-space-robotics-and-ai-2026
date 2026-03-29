@@ -16,7 +16,12 @@ def generate_launch_description():
     # Set Gazebo model and resource paths
     gz_model_path = os.path.join(pkg_share, 'models')
 
-    # # Set initial drone pose
+    # Set GZ_SIM_RESOURCE_PATH so Gazebo can find all custom models
+    px4_gz_models = os.path.expanduser('~/PX4-Autopilot/Tools/simulation/gz/models')
+    existing_gz_path = os.environ.get('GZ_SIM_RESOURCE_PATH', '')
+    os.environ['GZ_SIM_RESOURCE_PATH'] = ':'.join([p for p in [gz_model_path, px4_gz_models, existing_gz_path] if p])
+
+    # Set initial drone pose
     os.environ['PX4_GZ_MODEL_POSE'] = "0,0,0.1,0,0,0"
     
     # Add launch argument for PX4-Autopilot path
@@ -62,6 +67,21 @@ def generate_launch_description():
             '-P', '0',     # no pitch
             '-Y', '0',     # no yaw
             '-static'      # ensure it's static
+        ],
+        output='screen'
+    )
+
+    # Spawn the terrain mesh model
+    spawn_terrain = Node(
+        package='ros_gz_sim',
+        executable='create',
+        arguments=[
+            '-file', os.path.join(gz_model_path, 'terrain', 'model.sdf'),
+            '-name', 'terrain',
+            '-x', '0',
+            '-y', '0',
+            '-z', '0',
+            '-static'
         ],
         output='screen'
     )
@@ -125,15 +145,19 @@ def generate_launch_description():
             description='Path to PX4-Autopilot directory'),
         px4_sitl,
         TimerAction(
-            period=2.0,
+            period=5.0,
+            actions=[spawn_terrain]
+        ),
+        TimerAction(
+            period=6.0,
             actions=[spawn_cylinder_front]
         ),
         TimerAction(
-            period=2.5,
+            period=6.5,
             actions=[spawn_cylinder_back]
         ),
         TimerAction(
-            period=3.0,
+            period=7.0,
             actions=[bridge]
         )
     ]) 

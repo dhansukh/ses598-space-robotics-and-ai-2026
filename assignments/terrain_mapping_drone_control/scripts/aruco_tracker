@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+import sys
+from terrain_mapping_drone_control.aruco_tracker import main
+sys.exit(main() or 0)

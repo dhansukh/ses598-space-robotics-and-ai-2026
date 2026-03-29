@@ -16,9 +16,6 @@ def generate_launch_description():
     # Get paths
     model_path = os.path.join(pkg_share, 'models')
     
-  # Get the package share directory
-    pkg_share = get_package_share_directory('terrain_mapping_drone_control')
-        
     # Set Gazebo model and resource paths
     gz_model_path = os.path.join(pkg_share, 'models')
 
@@ -27,6 +24,12 @@ def generate_launch_description():
     
     # Add launch argument for PX4-Autopilot path
     px4_autopilot_path = LaunchConfiguration('px4_autopilot_path')
+
+    # Start Micro-XRCE-DDS Agent for PX4-ROS2 communication
+    micro_xrce_agent = ExecuteProcess(
+        cmd=['MicroXRCEAgent', 'udp4', '-p', '8888'],
+        output='screen'
+    )
     
     # Launch PX4 SITL with x500_depth
     px4_sitl = ExecuteProcess(
@@ -67,18 +70,6 @@ def generate_launch_description():
         output='screen'
     )
 
-    
-    # Wrap cylinder spawning in TimerAction
-    delayed_cylinder = TimerAction(
-        period=2.0,
-        actions=[spawn_cylinder]
-    )
-
-    delayed_terrain = TimerAction(
-        period=2.0,
-        actions=[spawn_terrain]
-    )
-
     # Bridge node for camera and odometry
     bridge = Node(
         package='ros_gz_bridge',
@@ -116,17 +107,18 @@ def generate_launch_description():
             'px4_autopilot_path',
             default_value=os.environ.get('HOME', '/home/' + os.environ.get('USER', 'user')) + '/PX4-Autopilot',
             description='Path to PX4-Autopilot directory'),
+        micro_xrce_agent,
         px4_sitl,
         TimerAction(
-            period=2.0,
-            actions=[delayed_cylinder]
-        ),
-         TimerAction(
-            period=2.0,
-            actions=[delayed_terrain]
+            period=15.0,
+            actions=[spawn_cylinder]
         ),
         TimerAction(
-            period=3.0,
+            period=15.0,
+            actions=[spawn_terrain]
+        ),
+        TimerAction(
+            period=18.0,
             actions=[bridge]
         )
     ])

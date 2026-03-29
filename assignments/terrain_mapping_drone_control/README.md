@@ -2,6 +2,30 @@
 
 This ROS2 package implements an autonomous drone system for geological feature detection, mapping, and analysis using an RGBD camera and PX4 SITL simulation.
 
+![Drone 1](./drone1.png)
+![Drone 2](./drone2.png)
+![Drone 3](./drone3.png)
+[Screencast - Watch Video](./Screencast%20from%2003-29-2026%2003:38:49%20AM.webm)
+
+## Mission Objectives
+
+**Intermediate:**
+- Search and locate the cylinder
+- Map the cylinder in 3D
+- Land safely on top of the cylinder
+
+**Advanced (extra credit):** 
+Execute intermediate objective, and do the following additional tasks:
+- Search and locate the rover
+- Map the rover in 3D
+- Land safely on top of the rover
+
+*In both cases, complete mission while logging time and energy performance.*
+
+## Evaluation Criteria (100 points)
+
+The assignment will be evaluated based on:
+- Total time taken to complete the mission
 
 ## Implemented Features
 
@@ -37,6 +61,11 @@ You can watch the mission execution (takeoff, search, orbit mapping, and precisi
 ## Mission Performance Logs
 
 The autonomous drone successfully met the evaluation criteria across 3 independent trials, showcasing consistent landing precision and energy efficiency.
+
+### 1st Pass 
+- Mission Duration: 252.4 seconds
+- Mission Duration: 276.3 seconds
+- Mission Duration: 270.8 seconds
 
 ### Trial 1
 ```

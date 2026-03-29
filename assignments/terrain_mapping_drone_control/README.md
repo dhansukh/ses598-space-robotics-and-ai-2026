@@ -124,6 +124,11 @@ You can watch the mission execution (takeoff, search, orbit mapping, and precisi
 
 [Mission Recording - Watch Video](./recoiding-1.webm)
 
+## Mission Screenshots
+
+![Screenshot 1](./screenshot_02_41_00.png)
+![Screenshot 2](./screenshot_02_43_58.png)
+
 ## Building and Running
 
 ```bash
